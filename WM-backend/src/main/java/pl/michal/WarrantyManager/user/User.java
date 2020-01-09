@@ -60,6 +60,8 @@ public class User {
 
     private String signature;
 
+    private String username;
+
     public User() {
     }
 
