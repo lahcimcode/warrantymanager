@@ -1,0 +1,70 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="side" opened fixedInViewport="true">
+        <mat-icon svgIcon="logo" style="font-size: 24px;"></mat-icon>
+        <button mat-icon-button>
+            <mat-icon class="mat-18">home</mat-icon>
+        </button>
+        <h1>WM</h1>
+
+        <ng-container *ngIf="!(token$ | async)">
+
+            <app-login *ngIf="haveAccount" (loginOrRegister)="loginOrRegister($event)"></app-login>
+
+            <app-register *ngIf="!haveAccount" (loginOrRegister)="loginOrRegister($event)"></app-register>
+            
+        </ng-container>
+
+
+        <mat-nav-list *ngIf="token$ | async">
+            <a mat-list-item routerLink="account">
+                <mat-icon>add_circle_outline</mat-icon> My account
+            </a>
+            <a mat-list-item>
+                <mat-icon>search</mat-icon> Add product
+            </a>
+            <a mat-list-item>
+                <mat-icon>apps</mat-icon> Show all products
+            </a>
+            <a mat-list-item>
+                <mat-icon>receipt</mat-icon> Show all receipts
+            </a>
+            <a mat-list-item routerLink="register">
+                <mat-icon>mood</mat-icon> Register
+            </a>
+            <a mat-list-item routerLink="login">
+                <mat-icon>mood</mat-icon> Login
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+
+    <mat-sidenav-content hasBackdrop="false">
+
+        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+
+        <router-outlet>
+
+        </router-outlet>
+
+        TUTAJ JEST NIEZALEŻNIE
+        <br />
+        <br />
+
+        <p>Token: {{token$ | async}}</p>
+
+        <p>currentUser: {{currentUser$ | async}}</p>
+
+        <p>emailRegistration: {{emailRegistration$ | async}}</p>
+
+        <p>errorMessage: {{errorMessage$ | async}}</p>
+
+
+    </mat-sidenav-content>
+
+
+
+
+</mat-sidenav-container>

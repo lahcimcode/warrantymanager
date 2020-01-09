@@ -1,0 +1,64 @@
+<div style="margin: 0 auto; width: 500px">
+
+    <h1>{{ 'register.title' | translate }}</h1>
+
+    <form [formGroup]="registerForm">
+        <p *ngIf="message$ | async as message">{{ message | translate }}</p>
+        <mat-form-field>
+            <input matInput type="email" formControlName="email" placeholder="{{ 'register.email' | translate }}"
+                required>
+            <mat-hint *ngIf="registerForm.get('email').invalid && !registerForm.get('email').touched" align="start">
+                {{ 'register.emailDescription' | translate }}</mat-hint>
+            <mat-hint *ngIf="registerForm.get('email').valid" align="start">Wszystko OK</mat-hint>
+            <mat-error *ngIf="registerForm.get('email').invalid">{{getErrorMessage('email') | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="password" formControlName="password"
+                placeholder="{{ 'register.password' | translate }}" #password required>
+            <mat-hint *ngIf="registerForm.get('password').invalid && !registerForm.get('password').touched"
+                align="start">{{ 'register.passwordDescription' | translate }}</mat-hint>
+            <mat-hint *ngIf="registerForm.get('password').valid" align="start">Pole wypełnione poprawnie</mat-hint>
+            <mat-hint align="end">{{password.value.length}}</mat-hint>
+            <mat-error *ngIf="registerForm.get('password').invalid">{{getErrorMessage('password') | translate}}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="password" formControlName="passwordConfirm"
+                placeholder="{{ 'register.passwordConfirm' | translate }}" #passwordConfirm required>
+            <mat-hint
+                *ngIf="registerForm.get('passwordConfirm').invalid && !registerForm.get('passwordConfirm').touched"
+                align="start">{{ 'register.passwordConfirmDescription' | translate }}</mat-hint>
+            <mat-hint *ngIf="registerForm.get('passwordConfirm').valid" align="start">Pole wypełnione poprawnie
+            </mat-hint>
+            <mat-hint align="end">{{passwordConfirm.value.length}}</mat-hint>
+            <mat-error *ngIf="registerForm.get('passwordConfirm').invalid">
+                {{getErrorMessage('passwordConfirm') | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" formControlName="username" placeholder="{{ 'register.username' | translate }}"
+                required>
+            <mat-hint *ngIf="registerForm.get('username').invalid && !registerForm.get('username').touched"
+                align="start">{{ 'register.usernameDescription' | translate }}</mat-hint>
+            <mat-hint *ngIf="registerForm.get('username').valid" align="start">Pole wypełnione poprawnie</mat-hint>
+            <mat-error *ngIf="registerForm.get('username').invalid">{{getErrorMessage('username') | translate}}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="regulations">{{ 'register.regulations' | translate }}</mat-checkbox>
+
+    </form>
+
+    <p *ngIf="verification">{{verification | translate}}</p>
+
+    <p *ngIf="errorMessage$ | async as errorMessage">{{errorMessage | translate}}</p>
+
+    <button mat-raised-button type="submit" (click)="register()">{{ 'register.register' | translate }}</button>
+    
+    <br />
+    
+    <a (click)="redirectLogin()">{{ 'register.login' | translate }}</a>
+
+</div>

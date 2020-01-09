@@ -1,0 +1,70 @@
+{
+    "main": {
+        "title": "Warranty Manager",
+        "login": "Login",
+        "language": "EN"
+    },
+    "register": {
+        "title": "Join to Us",
+        "email": "Email",
+        "password": "Password",
+        "passwordConfirm": "Confirm password",
+        "username": "Username",
+        "regulations": "I accept the terms and conditions",
+        "emailDescription": "Write your email",
+        "passwordDescription": "Enter password",
+        "passwordConfirmDescription": "Confirm password",
+        "usernameDescription": "What's your name",
+        "register": "Create account",
+        "login": "I have an account",
+        "errorMessages": {
+            "email": {
+                "required": "Email is required",
+                "pattern": "Wrong email address"
+            },
+            "password": {
+                "required": "Password is required",
+                "minlength": "Password must contain minimum 6 characters",
+                "maxlenght": "Password can contain a maximum of 32 characters",
+                "pattern": "Password must contain uppercase letters, lowercase letters, number, non-alpha numeric number"
+            },
+            "passwordConfirm": {
+                "required": "Confirm a password"
+            },
+            "username": {
+                "required": "Username is required"
+            },
+            "verification": {
+                "validation": "Fill out all required fields correctly",
+                "regulations": "Accept the terms and conditions",
+                "password": "Entered passwords are different",
+                "duplicate": "User with this email address already exists"
+            }
+        }
+    },
+    "login": {
+        "title": "LOGIN TO YOUR ACCOUNT",
+        "e-mail": "E-mail",
+        "password": "Password",
+        "login": "Login",
+        "rememberMe": "Remember me",
+        "loginGoogle": "Login with Google",
+        "forgot": "Forgot Password?",
+        "haveAccount": "Don't have an account?",
+        "createAccount": "Create an account",
+        "or": "OR",
+        "errorMessages": {
+            "email": {
+                "required": "Enter email",
+                "email": "Incorrect email"
+            },
+            "password": {
+                "required": "Enter password"
+            },
+            "verification": {
+                "validation": "Fill out all required fields correctly",
+                "wrongEmailPassword": "Wrong email or password"
+            }
+        }
+    }
+}

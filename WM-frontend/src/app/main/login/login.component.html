@@ -1,0 +1,40 @@
+<div style="margin: 0 auto; width: 300px; padding: 0 20px;">
+    <h3>{{ 'login.title' | translate }}</h3>
+
+    <form [formGroup]="loginForm">
+
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="{{ 'login.email' | translate }}" type="email" required>
+            <mat-icon matSuffix style="color: rgba(0,0,0,.54);">mail</mat-icon>
+            <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">{{getErrorMessage('email') | translate}}</mat-error>
+        </mat-form-field>
+<br />
+        <mat-form-field>
+            <input matInput formControlName="password" placeholder="{{ 'login.password' | translate }}" [type]="passwordVisiblity ? 'text' : 'password'" required>
+            <mat-icon matSuffix (click)="passwordVisiblity = !passwordVisiblity">{{passwordVisiblity ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-icon *ngIf="loginForm.get('password').valid" matSuffix>check icon</mat-icon>
+            <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">{{getErrorMessage('password') | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="rememberMe">{{ 'login.rememberMe' | translate }}</mat-checkbox>
+
+    </form>
+
+    <p>{{ 'login.forgot' | translate }}</p>
+
+    <p *ngIf="loginError">{{loginError | translate}}</p>
+
+    <p *ngIf="errorMessage$ | async as errorMessage">{{errorMessage | translate}}</p>
+
+    <button mat-raised-button (click)="login()">{{ 'login.login' | translate }}</button>
+
+    <p> --- {{ 'login.or' | translate }} ---</p>
+
+    <button mat-raised-button color="warn">{{ 'login.loginGoogle' | translate }}</button>
+
+    <p>{{ 'login.haveAccount' | translate }}</p>
+    
+    <a (click)="redirectRegister()">{{ 'login.createAccount' | translate }}</a>
+
+
+</div>

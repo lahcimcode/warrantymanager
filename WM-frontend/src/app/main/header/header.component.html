@@ -1,0 +1,22 @@
+<!--  HEADER TOOLBAR -->
+<mat-toolbar>
+    <mat-form-field style="width: 500px;">
+        <input matInput placeholder="{{ 'login.email' | translate }}" type="email" required>
+    </mat-form-field>
+
+    <mat-form-field style="width: 500px;">
+        <input matInput placeholder="{{ 'login.password' | translate }}" type="password" required>
+    </mat-form-field>
+
+    <p>{{ 'login.forgot' | translate }}</p>
+
+    <button mat-raised-button>{{ 'login.login' | translate }}</button>
+
+    <p> --- OR ---</p>
+
+    <button mat-raised-button color="warn">Log in with Google</button>
+
+    <p>Don't have an account?</p>
+    <a routerLink="../register">Create an account</a>
+
+</mat-toolbar>

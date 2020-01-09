@@ -1,0 +1,70 @@
+{
+    "main": {
+        "title": "Zarządzanie gwarancjami",
+        "login": "Zaloguj",
+        "language": "PL"
+    },
+    "register": {
+        "title": "Dołącz do nas",
+        "email": "Email",
+        "password": "Hasło",
+        "passwordConfirm": "Powtórz hasło",
+        "username": "Nazwa użytkownika",
+        "regulations": "Akceptuję regulamin oraz politykę prywatności",
+        "emailDescription": "Podaj swój adres email",
+        "passwordDescription": "Wprowadź hasło",
+        "passwordConfirmDescription": "Powtórz hasło",
+        "usernameDescription": "Przedstaw nam się",
+        "register": "Utwórz konto",
+        "login": "Posiadam konto",
+        "errorMessages": {
+            "email": {
+                "required": "Email jest wymagany",
+                "pattern": "Błędny adres email"
+            },
+            "password": {
+                "required": "Hasło jest wymagane",
+                "minlength": "Hasło musi zawierać minimum 6 znaków",
+                "maxlenght": "Hasło może zawierać maksymalnie 32 znaki",
+                "pattern": "Hasło musi zawierać małą literę, dużą literę, cyfrę oraz znak"
+            },
+            "passwordConfirm": {
+                "required": "Powtórz hasło"
+            },
+            "username": {
+                "required": "Nazwa użytkownika jest wymagana"
+            },
+            "verification": {
+                "validation": "Wypełnij poprawnie wszystkie wymagane pola",
+                "regulations": "Zaakceptuj regulamin oraz politykę prywatności",
+                "password": "Podane hasła są różne",
+                "duplicate": "Użytkownik o tym adresie email juz istnieje"
+            }
+        }
+    },
+    "login": {
+        "title": "Zaloguj się do serwisu",
+        "email": "E-mail",
+        "password": "Hasło",
+        "login": "Zaloguj",
+        "rememberMe": "Zapamiętaj mnie",
+        "loginGoogle": "Zaloguj z Google",
+        "forgot": "Zapomniałeś hasła?",
+        "haveAccount": "Nie posiadasz konta?",
+        "createAccount": "Utwórz konto",
+        "or": "LUB",
+        "errorMessages": {
+            "email": {
+                "required": "Podaj email",
+                "email": "Błędny adres email"
+            },
+            "password": {
+                "required": "Podaj hasło"
+            },
+            "verification": {
+                "validation": "Wypełnij poprawnie pola logowania",
+                "wrongEmailPassword": "Niepoprawne dane logowania"
+            }
+        }
+    }
+}
